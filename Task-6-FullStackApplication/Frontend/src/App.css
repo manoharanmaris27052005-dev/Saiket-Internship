@@ -1,0 +1,365 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 70px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding: 42px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.10);
+
+  animation: containerShow 0.7s ease forwards;
+}
+
+h1 {
+  margin: 0 0 38px;
+  text-align: center;
+  color: #111827;
+  font-size: 36px;
+  font-weight: 750;
+  letter-spacing: -1.2px;
+
+  animation: titleShow 0.8s ease forwards;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 10px;
+  background: #111827;
+
+  animation: lineGrow 0.7s ease 0.5s forwards;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 0.7fr auto;
+  gap: 12px;
+  margin-bottom: 45px;
+
+  animation: formShow 0.8s ease 0.2s both;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 11px;
+
+  outline: none;
+  background: #fafafa;
+  color: #111827;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+input:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+input:focus {
+  background: #ffffff;
+  border-color: #111827;
+
+  box-shadow:
+    0 0 0 4px rgba(17, 24, 39, 0.07);
+
+  transform: translateY(-2px);
+}
+
+form button {
+  padding: 14px 22px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: #111827;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+form button:hover {
+  background: #374151;
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(17, 24, 39, 0.18);
+}
+
+form button:active {
+  transform: scale(0.97);
+}
+
+.user-list {
+  margin-top: 10px;
+}
+
+.user-list h2 {
+  margin: 0 0 20px;
+
+  color: #111827;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  animation: fadeUp 0.7s ease 0.4s both;
+}
+
+.user-list > p {
+  padding: 30px;
+
+  text-align: center;
+
+  color: #9ca3af;
+
+  border: 1px dashed #d1d5db;
+  border-radius: 14px;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 20px 22px;
+  margin-bottom: 13px;
+
+  background: #fafafa;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+
+  animation: cardShow 0.5s ease both;
+}
+
+.user-card:hover {
+  background: #ffffff;
+
+  border-color: #d1d5db;
+
+  transform: translateY(-4px) scale(1.005);
+
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.09);
+}
+
+.user-card h3 {
+  margin: 0 0 6px;
+
+  color: #111827;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.user-card p {
+  margin: 4px 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.user-card > div:last-child {
+  display: flex;
+  gap: 9px;
+}
+
+.user-card button {
+  padding: 9px 15px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.user-card button:hover {
+  background: #111827;
+  color: #ffffff;
+
+  border-color: #111827;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(17, 24, 39, 0.15);
+}
+
+.user-card button:active {
+  transform: scale(0.95);
+}
+
+@keyframes containerShow {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes titleShow {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 48px;
+  }
+}
+
+@keyframes formShow {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardShow {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 750px) {
+
+  .app {
+    padding: 30px 15px;
+  }
+
+  .container {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form button {
+    width: 100%;
+  }
+
+  .user-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .user-card > div:last-child {
+    width: 100%;
+  }
+
+  .user-card button {
+    flex: 1;
+  }
+}
